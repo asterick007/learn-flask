@@ -2,69 +2,7 @@
 <html>
 <head>
     <title>Flask</title>
-    <style>
-        body {
-            background-color: #374c3d;
-            font-family: Arial, sans-serif;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-            font-size: 40px;
-            font-family: Roboto, sans-serif;
-            font-weight: normal;
-        }
-        h2 {
-            text-align: center;
-            color: #333;
-            font-size: 30px;
-            font-family: Roboto, sans-serif;
-            font-weight: normal;
-        }
-        p, ul {
-            font-size: 18px;
-            line-height: 1.5;
-            color: #666;
-        }
-        .button-container {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .button {
-            padding: 10px 20px;
-            background-color: white;
-            color: #333;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-            display: inline-block;
-        }
-        .button a {
-            text-decoration: none;
-            color: #333;
-            transition: color 0.3s ease;
-        }
-        .button:hover {
-            background-color: #555;
-        }
-        .button:hover a {
-            color: white;
-        }
-        img {
-            display: block;
-            margin: 0 auto;
-            max-width: 100%;
-            height: auto;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
 </head>
 <body>
     <div class="container">
@@ -82,10 +20,12 @@
             <li>Flask can be used with any database like SQL and NoSQL and with any Frontend Technology such as React or Angular.</li>
             <li>Flask is great for small to medium projects that do not require the complexity of a large framework.</li>
         </ul>
-        <h2>Features</h2>
-        <p>ToDo</p>
+        <h2>Openings</h2>
+        {% for job in jobs %}
+        {% include 'jobitem.html' %}
+        {% endfor %}
         <div class="button-container">
-          <button class="button">
+            <button class="button">
                 <a target="_blank" href="https://flask.palletsprojects.com/en/3.0.x/">Know More About Flask</a>
             </button>
         </div>

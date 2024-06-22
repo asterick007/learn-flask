@@ -1,0 +1,13 @@
+<div class='openings' style="display: flex; justify-content: space-between;"">
+  <div>
+    <h4 style="color:rgb(120,120,120)">{{job['title']}}</h4>
+    <div><strong>Location:</strong> {{job['location']}}</div>
+    {% if 'salary' in job %}
+    <div><strong>Salary:</strong> {{job['salary']}}</div>
+    {% endif %}
+  </div>
+  <div style="display: flex; align-items: center;">
+    <button class='button''>Apply</button>
+  </div>
+</div>
+<hr>
